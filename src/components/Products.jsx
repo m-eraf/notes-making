@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const Products = () => {
   const { data, setData } = useState();
-  let { filter, setFilter } = useState(data);
+  const { filter, setFilter } = useState(data);
   const { loading, setLoading } = useState(false);
   let componentMounted = true;
 
@@ -36,27 +36,24 @@ const Products = () => {
       <button className="btn btn-outline-dark">bbCollege Coll</button>
       <button className="btn btn-outline-dark">Party Collection</button>
       <button className="btn btn-outline-dark">Home Collection</button>
-    </div>)(
-      filter.map((product) => {
+    </div>
+    {
+      filter.map(product)=>{
         return (
           <div className="col-md-3">
-            <div className="card h-100 text-center p-4" key={product.id}>
-              <img
-                src={product.image}
-                className="card-img-top"
-                alt={product.title}
-              />
-              <div className="card-body">
-                <h5 className="card-title">{product.title}</h5>
-                <p className="card-text">${product.price}</p>
-                <a href="#" className="btn btn-primary">
-                  Go somewher
-                </a>
-              </div>
-            </div>
+          <div class="card" >
+  <img src={product.image} class="card-img-top" alt={product.title}/>
+  <div class="card-body">
+    <h5 class="card-title">{product.title}</h5>
+    <p class="card-text">${product.price}</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
           </div>
-        );
-      })
+
+        )
+      }
+    }
     );
   };
 
