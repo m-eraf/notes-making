@@ -29,17 +29,34 @@ const Products = () => {
   };
 
   const ShowProducts = () => {
-    return (
-      <>
-        <div className="buttons d-flex justify-content-center mb-5 pb-5">
-          <button className="btn btn-outline-dark">College Collection</button>
-          <button className="btn btn-outline-dark">Party Collection</button>
-          <button className="btn btn-outline-dark">Home Collection</button>
-          <button className="btn btn-outline-dark">bbCollege Coll</button>
-          <button className="btn btn-outline-dark">Party Collection</button>
-          <button className="btn btn-outline-dark">Home Collection</button>
-        </div>
-      </>
+    return (<div className="buttons d-flex justify-content-center mb-5 pb-5">
+      <button className="btn btn-outline-dark">College Collection</button>
+      <button className="btn btn-outline-dark">Party Collection</button>
+      <button className="btn btn-outline-dark">Home Collection</button>
+      <button className="btn btn-outline-dark">bbCollege Coll</button>
+      <button className="btn btn-outline-dark">Party Collection</button>
+      <button className="btn btn-outline-dark">Home Collection</button>
+    </div>)(
+      filter.map((product) => {
+        return (
+          <div className="col-md-3">
+            <div className="card h-100 text-center p-4" key={product.id}>
+              <img
+                src={product.image}
+                className="card-img-top"
+                alt={product.title}
+              />
+              <div className="card-body">
+                <h5 className="card-title">{product.title}</h5>
+                <p className="card-text">${product.price}</p>
+                <a href="#" className="btn btn-primary">
+                  Go somewher
+                </a>
+              </div>
+            </div>
+          </div>
+        );
+      })
     );
   };
 
