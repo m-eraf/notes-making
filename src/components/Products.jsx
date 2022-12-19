@@ -29,30 +29,40 @@ const Products = () => {
   };
 
   const ShowProducts = () => {
-    return (<div className="buttons d-flex justify-content-center mb-5 pb-5">
-      <button className="btn btn-outline-dark">College Collection</button>
-      <button className="btn btn-outline-dark">Party Collection</button>
-      <button className="btn btn-outline-dark">Home Collection</button>
-      <button className="btn btn-outline-dark">bbCollege Coll</button>
-      <button className="btn btn-outline-dark">Party Collection</button>
-      <button className="btn btn-outline-dark">Home Collection</button>
-    </div>
-      filter.map(product)=>{
-        return (
-          <div className="col-md-3">
-          <div class="card" >
-  <img src={product.image} class="card-img-top" alt={product.title}/>
-  <div class="card-body">
-    <h5 class="card-title">{product.title}</h5>
-    <p class="card-text">${product.price}</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
-          </div>
-
-        )
-      }
-    }
+    return (
+      <>
+        <div className="buttons d-flex justify-content-center mb-5 pb-5">
+          <button className="btn btn-outline-dark">College Collection</button>
+          <button className="btn btn-outline-dark">Party Collection</button>
+          <button className="btn btn-outline-dark">Home Collection</button>
+          <button className="btn btn-outline-dark">bbCollege Coll</button>
+          <button className="btn btn-outline-dark">Party Collection</button>
+          <button className="btn btn-outline-dark">Home Collection</button>
+        </div>
+        {filter.map((product) => {
+          return (
+            <>
+              <div className="col-md-3">
+                <div class="card">
+                  <img
+                    src={product.image}
+                    class="card-img-top"
+                    alt={product.title}
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">{product.title}</h5>
+                    <p class="card-text">${product.price}</p>
+                    <a href="#" class="btn btn-primary">
+                      Go somewhere
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </>
+          );
+        })}
+      </>
+    );
   };
 
   return (
