@@ -37,7 +37,6 @@ const Products = () => {
       <button className="btn btn-outline-dark">Party Collection</button>
       <button className="btn btn-outline-dark">Home Collection</button>
     </div>
-    {
       filter.map(product)=>{
         return (
           <div className="col-md-3">
@@ -54,7 +53,6 @@ const Products = () => {
         )
       }
     }
-    );
   };
 
   return (
