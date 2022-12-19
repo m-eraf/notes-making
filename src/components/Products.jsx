@@ -25,7 +25,7 @@ const Products = () => {
   }, []);
 
   const Loading = () => {
-    return <>Loading Srishti itti bhi jaldi kya hai.......</>;
+    return <>Loading .......</>;
   };
 
   const ShowProducts = () => {
