@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 
 const Products = () => {
-  const [data, setData] = useState();
-  const [filter, setFilter] = useState(data);
-  const [loading, setLoading] = useState(false);
+  const { data, setData } = useState();
+  let { filter, setFilter } = useState(data);
+  const { loading, setLoading } = useState(false);
   let componentMounted = true;
 
   useEffect(() => {
@@ -31,11 +31,11 @@ const Products = () => {
   const ShowProducts = () => {
     return (
       <>
-        <div className="buttons">
+        <div className="buttons d-flex justify-content-center mb-5 pb-5">
           <button className="btn btn-outline-dark">College Collection</button>
           <button className="btn btn-outline-dark">Party Collection</button>
           <button className="btn btn-outline-dark">Home Collection</button>
-          <button className="btn btn-outline-dark">College Coll</button>
+          <button className="btn btn-outline-dark">bbCollege Coll</button>
           <button className="btn btn-outline-dark">Party Collection</button>
           <button className="btn btn-outline-dark">Home Collection</button>
         </div>
