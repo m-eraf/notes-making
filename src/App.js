@@ -1,12 +1,13 @@
-import './App.css';
-import Navbar from './components/Navbar';
+
+//components
 import Home from './components/Home';
+import DataProvider from './context/DataProvider';
+
 function App() {
   return (
-    <>
-    <Navbar/>
-    <Home/>
-    </>
+    <DataProvider>
+      <Home />
+    </DataProvider>
   );
 }
 
